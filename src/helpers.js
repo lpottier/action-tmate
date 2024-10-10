@@ -78,6 +78,7 @@ export const getLinuxDistro = async () => {
     const match = osRelease.toString().match(/^ID=(.*)$/m)
     return match ? match[1] : "(unknown)"
   } catch (e) {
+    core.debug(e)
     return "(unknown)"
   }
 }
